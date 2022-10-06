@@ -1,0 +1,79 @@
+$primary: red;
+$secondary: lightgray;
+@import "../../node_modules/bootstrap/scss/bootstrap"; 
+@import "../../node_modules/sass-google-fonts/src/GoogleFonts.scss";
+@include google-font( 'Gemunu Libre' );
+
+body {
+    background-color: #fbfbfb;
+    font-family: 'Gemunu Libre';
+  }
+
+  .navbar {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding: 58px 0 0; /* Height of navbar */
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+    width: 40px;
+  }
+  
+
+  .sidebar .active {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border-color:rgb(255, 255, 255)
+  }
+  
+  // * NESTING
+  .list-group-flush  {
+    .list-group-item {
+    border-width: 2px;
+    }
+  }
+
+
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 48px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  }
+
+  .active {
+    color: white!important;
+    background: red!important;
+    outline: 1px solid white;
+  }
+
+//   ! MAIN
+
+// * NESTING
+main {
+    padding-left: 50px;
+    padding-top: 60px;
+    p {
+      font-size: 20px;
+    }
+}
+
+
+// * MIXIN
+@mixin minusHeight($x, $y) {
+  height: calc($x - $y);
+}
+
+.carousel-item {
+  @include minusHeight(100vh, 60px)
+}
+
